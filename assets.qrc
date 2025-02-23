@@ -1,0 +1,19 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>assets/game_icon.png</file>
+        <file>assets/launcher_bg_a.png</file>
+        <file>assets/launcher_bg_b.png</file>
+        <file>assets/endfield_logo.png</file>
+        <file>assets/endfield_logo_v2.png</file>
+        <file>assets/endfield_logo_v2_w.png</file>
+        <file>assets/github_logo.png</file>
+        <file>assets/close_icon.png</file>
+        <file>assets/close_icon_w.png</file>
+        <file>assets/minimize_icon.png</file>
+        <file>assets/minimize_icon_w.png</file>
+        <file>assets/fonts/NuberNext-Bold.otf</file>
+        <file>assets/fonts/NuberNext-Light.otf</file>
+        <file>assets/fonts/NuberNext-Regular.otf</file>
+    </qresource>
+</RCC>
