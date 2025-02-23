@@ -38,3 +38,6 @@ You will also need to set up some proxy if you want to play on a publically host
 如果你只是想下载游戏客户端，则不必安装任何依赖，但如果你想部署服务器，则需要在你的电脑上安装 VS2022、.Net 8.0 SDK 和 msbuild（应该会随着 VS 自动安装的）。你还需要安装 MongoDB 来运行服务器。不过，它会自动下载最新的游戏资源（表格、JSON 文件）并放置到正确的位置，所以你不必担心它们。
 
 如果你想在公共服务器或你自己的服务器上进行游戏，则还需要设置一些代理。我正在尝试将这部分功能整合到启动器中，但这不会很快实现。有关如何设置代理的更多信息，请参阅 https://github.com/SuikoAkari/ArkFieldPS 。
+
+## Waning / 注意
+I don't want to see this, as well as any other assets being sold for money ANYWHERE. You may modify, customize, improve and share without any limitation ( and I will not be responsible for any consequence thereof), but NO MONETIZATION. 挂咸鱼 / 挂B站卖钱的，或者以任何其他方式倒卖的，包4全家。
