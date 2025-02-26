@@ -10,7 +10,7 @@ It can also deploy the server for you. It will pull the dev branch of from https
 
 ## How do I use it
 
-You can either run the python file directly or use a bundled exe version. You can find it in the releases section.
+You can either run the python file directly or use a bundled exe version. You can find it in the releases section: https://github.com/CloudTronUSA/Endfield-Launcher/releases/tag/0.1.0
 
 **If you don't have python env, DOWNLOAD THE BUNDLED VERSION from the releases section. Do not download the source code as you won't be able to run them!**
 
@@ -33,7 +33,7 @@ You will also need to set up some proxy if you want to play on a publically host
 
 ## 我该如何使用
 
-你可以直接运行 Python 文件（如果你有 Python 环境的话），也可以使用打包好的 exe 版本。你可以在 releases 页面下载。
+你可以直接运行 Python 文件（如果你有 Python 环境的话），也可以使用打包好的 exe 版本。你可以在 releases 页面下载：https://github.com/CloudTronUSA/Endfield-Launcher/releases/tag/0.1.0
 
 **如果你没有 Python 环境，去 releases 里下载打包好的 exe！不要直接克隆项目或者下载源代码，运行不了的！**
 
