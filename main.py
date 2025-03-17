@@ -22,12 +22,12 @@ GAME_DOWNLOAD_CACHE = os.path.join(GAME_INSTALL_PATH, "cache")
 GAME_DOWNLOAD_PATH = os.path.join(GAME_DOWNLOAD_CACHE, "EndfieldGame.7z")
 GAME_EXECUTABLE_PATH = os.path.join(GAME_INSTALL_PATH, "Beyond_Release-2089329-32_os_prod_cbt", "Endfield_TBeta_OS.exe")
 
-SERVER_REPO = "https://github.com/SuikoAkari/ArkFieldPS.git"
+SERVER_REPO = "https://github.com/Campofinale/Campofinale.git"
 SERVER_INSTALL_PATH= "./EndfieldServer"
-SERVER_REPO_PATH = os.path.join(SERVER_INSTALL_PATH, "ArkfieldPS")
-SERVER_SOLUTION_FILE = os.path.join(SERVER_REPO_PATH, "ArkfieldPS.sln")
-SERVER_ARTIFACT_PATH = os.path.join(SERVER_REPO_PATH, "ArkfieldPS", "bin", "Release", "net8.0")
-SERVER_EXECUTABLE_PATH = os.path.join(SERVER_ARTIFACT_PATH, "ArkfieldPS.exe")
+SERVER_REPO_PATH = os.path.join(SERVER_INSTALL_PATH, "Campofinale")
+SERVER_SOLUTION_FILE = os.path.join(SERVER_REPO_PATH, "Campofinale.sln")
+SERVER_ARTIFACT_PATH = os.path.join(SERVER_REPO_PATH, "Campofinale", "bin", "Release", "net8.0")
+SERVER_EXECUTABLE_PATH = os.path.join(SERVER_ARTIFACT_PATH, "Campofinale.exe")
 
 SERVER_DATA_REPO = "https://github.com/PotRooms/EndFieldData.git"
 SERVER_DATA_REPO_PATH = os.path.join(SERVER_INSTALL_PATH, "EndFieldData")
@@ -56,7 +56,7 @@ def show_popup(title, message, mode=0):
 
 def extract7z(archive_path, output_dir, progress_tracker):
     cmd = [
-        "7za.exe", "x", archive_path, f"-o{output_dir}",
+        "assets/bins/7za.exe", "x", archive_path, f"-o{output_dir}",
         "-bsp1", "-y"
     ]
     process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
@@ -231,6 +231,7 @@ class GameLauncherBackend:
             if response.status_code >= 400:
                 response = session.get(initial_url, allow_redirects=True, stream=True, timeout=10)
         except Exception as e:
+            print(f"Failed to get real URL: {e}")
             return None
         finally:
             session.close()
@@ -266,22 +267,12 @@ class ServerLauncherBackend:
             
         self.buildProgress = BuildProgressTracker()
 
-        # find msbuild
-        try:
-            msbuild_path = self.find_msbuild()
-        except Exception as e:
-            self.buildProgress.statusText = f"Failed to locate build tools!"
-            show_popup("Error", f"Failed to locate build tools: {e}")
-            self.status = 4
-            return False
-        self.buildProgress.progressValue = 10
-
         # compile project
 
         # clean up old build
         empty_folder(SERVER_ARTIFACT_PATH)
         try:
-            ret = self.compile_project(msbuild_path, SERVER_SOLUTION_FILE, progress_tracker=self.buildProgress)
+            ret = self.compile_project(SERVER_SOLUTION_FILE, progress_tracker=self.buildProgress)
             if not ret:
                 self.status = 4
                 return False
@@ -353,6 +344,7 @@ class ServerLauncherBackend:
             print(f"Failed to download Endfield Network deployment dependencies: {e}")
             return False
 
+    '''
     def find_msbuild(self):
         vswhere_path = os.path.join(
             os.environ.get("ProgramFiles(x86)", "C:\\Program Files (x86)"),
@@ -373,9 +365,10 @@ class ServerLauncherBackend:
         msbuild_path = result.stdout.strip()
         if not msbuild_path or not os.path.exists(msbuild_path):
             raise FileNotFoundError("MSBuild.exe not found via vswhere.")
-        return msbuild_path
+        return msbuild_path'
+        '''
 
-    def compile_project(self, msbuild_path, solution_file, configuration="Release", progress_tracker=None):
+    def compile_project(self, solution_file, configuration="Release", progress_tracker=None):
         if not os.path.exists(solution_file):
             progress_tracker.statusText = f"Solution file not found: {solution_file}"
             progress_tracker.status = 3
@@ -385,18 +378,16 @@ class ServerLauncherBackend:
         progress_tracker.status = 1 # 1: working, 2: finished, 3: failed
 
         command = [
-            msbuild_path,
-            "/restore",  # Automatically run NuGet package restore.
-            solution_file,
-            f"/p:Configuration={configuration}"
+            "dotnet", "build", solution_file,
+            "--configuration", configuration,
         ]
 
         result = subprocess.run(command, capture_output=True, text=True)
         if result.returncode != 0:
-            with open("msbuild_output.log", "w") as f:
+            with open("dotnet_output.log", "w") as f:
                 f.write(result.stdout)
                 f.write(result.stderr)
-            progress_tracker.statusText = f"Compilation failed. See msbuild_output.log for details."
+            progress_tracker.statusText = f"Compilation failed. See dotnet_output.log for details."
             return False
         progress_tracker.statusText = "Compilation successful."
         return True

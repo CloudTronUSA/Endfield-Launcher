@@ -1,0 +1,22 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>images/game_icon.png</file>
+        <file>images/launcher_bg_a.png</file>
+        <file>images/launcher_bg_b.png</file>
+        <file>images/endfield_logo.png</file>
+        <file>images/endfield_logo_v2.png</file>
+        <file>images/endfield_logo_v2_w.png</file>
+        <file>images/github_logo.png</file>
+        <file>images/close_icon.png</file>
+        <file>images/close_icon_w.png</file>
+        <file>images/minimize_icon.png</file>
+        <file>images/checkbox_unchecked.png</file>
+        <file>images/checkbox_checked.png</file>
+        <file>images/minimize_icon_w.png</file>
+        <file>images/options_icon.png</file>
+        <file>fonts/NuberNext-Bold.otf</file>
+        <file>fonts/NuberNext-Light.otf</file>
+        <file>fonts/NuberNext-Regular.otf</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,13 @@
+D:\Project\Endfield Launcher\ProxyDLL\bin\Release\net8.0\win-x64\ProxyDLL.deps.json
+D:\Project\Endfield Launcher\ProxyDLL\bin\Release\net8.0\win-x64\ProxyDLL.dll
+D:\Project\Endfield Launcher\ProxyDLL\bin\Release\net8.0\win-x64\ProxyDLL.pdb
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.csproj.AssemblyReference.cache
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.AssemblyInfoInputs.cache
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.AssemblyInfo.cs
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.csproj.CoreCompileInputs.cache
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.sourcelink.json
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.dll
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\refint\ProxyDLL.dll
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ProxyDLL.pdb
+D:\Project\Endfield Launcher\ProxyDLL\obj\Release\net8.0\win-x64\ref\ProxyDLL.dll

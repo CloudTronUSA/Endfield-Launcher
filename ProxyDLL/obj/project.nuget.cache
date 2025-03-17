@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "W57ux9ouk0o=",
+  "success": true,
+  "projectFilePath": "D:\\Project\\Endfield Launcher\\ProxyDLL\\ProxyDLL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cloud\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
+    "C:\\Users\\cloud\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\cloud\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\cloud\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\cloud\\.nuget\\packages\\unobtanium.web.proxy\\0.1.5\\unobtanium.web.proxy.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}
